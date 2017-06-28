@@ -71,16 +71,4 @@ public class MainActivity extends AppCompatActivity {
 
         // InputSource inputSource = new InputSource(new StringReader(asyncRes));
     }
-
-    public void mDelete(int id) throws Exception {
-        OkHttpClient httpclient = new OkHttpClient();
-        Request request = new Request.Builder().url(url + "/" + id).delete().build();
-        try (Response response = httpclient.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                throw new RuntimeException("Failed to delete book with id:" + id);
-
-            }
-        }
-    }
-
 }
